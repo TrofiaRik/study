@@ -1,14 +1,18 @@
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
+import urllib.parse
+import urllib.error
 import json
 
-service_url = 'https://maps.googleapis.com/maps/api/geocode/json?'#address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
-api_key = 'AIzaSyAMq5I0wdcSrYtIA7zJpVOYzwcYtbCQn4Q'
+# address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
+service_url = 'https://maps.googleapis.com/maps/api/geocode/json?'
+api_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
 while True:
     address = input('Enter location: ')
-    if len(address) < 1 : break
+    if len(address) < 1:
+        break
 
-    #Add also the API key
+    # Add also the API key
     url = service_url + urllib.parse.urlencode({
         'address': address,
         'key': api_key
@@ -16,17 +20,16 @@ while True:
 
     print('Retrieving', url)
     url_handle = urllib.request.urlopen(url)
-    #print('url_handle (containing request) var: ', url_handle)
+    # print('url_handle (containing request) var: ', url_handle)
     data = url_handle.read().decode()
     print('Retrieved', len(data), 'characters')
-    #print('My data blob: ', data)
+    # print('My data blob: ', data)
 
     try:
         js = json.loads(data)
     except:
         js = None
-    
-    if not js or 'status' not in js or js['status'] != 'OK' :
+    if not js or 'status' not in js or js['status'] != 'OK':
         print('!!====!! Failure To Retrieve !!====!!')
         print(data)
         continue
@@ -39,5 +42,3 @@ while True:
     location = js["results"][0]["formatted_address"]
     print('lat', lat, 'lng', lng)
     print(location, f'and the short name is {short}')
-
-
