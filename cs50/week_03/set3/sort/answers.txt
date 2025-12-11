@@ -1,11 +1,11 @@
-sort1 uses: TODO
+sort1 uses: Bubble Sort
 
-How do you know?: TODO
+How do you know?: Very slow on random and reversed but n-fast on sorted 
 
-sort2 uses: TODO
+sort2 uses: Merge Sort
 
-How do you know?: TODO
+How do you know?: computation time is the fastest and identical for all the cases. Merge sort is inerently faster and also there it is 'insensible' to the kind of order of the data received
 
-sort3 uses: TODO
+sort3 uses: Selection Sort
 
-How do you know?: TODO
+How do you know?: Equally slow in all three cases (random, sorted, reversed) 

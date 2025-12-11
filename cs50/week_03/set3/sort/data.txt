@@ -1,0 +1,28 @@
+Selection Sort    O(n^2)      omega(n^2)
+                  very slow   = very slow
+SORT3
+RANDOM 50.000     3.950
+SORTED 50.000                 3.910
+REVERSED 50.000               3.984   
+
+
+
+
+Bubble Sort       O(n^2)      omega(n)
+                  very slow   faster on sorted
+SORT 1
+RANDOM 50.000     8.870
+SORTED 50.000                 0.650
+REVERSED 50.000   6.680        
+ 
+
+
+
+
+Merge Sort        O(n log n)  omega(n log n)
+                  fast        = fast
+
+SORT 2
+RANDOM 50.000     0.650       
+SORTED 50.000                 =
+REVERSED 50.000               =
